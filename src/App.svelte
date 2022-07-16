@@ -1,9 +1,9 @@
 <script>
-  import Filter from "./components/Filter.svelte";
+  import Filters from "./components/Filters.svelte";
   import Results from "./components/Results.svelte";
 </script>
 
 <main>
-  <Filter />
+  <Filters />
   <Results />
 </main>
