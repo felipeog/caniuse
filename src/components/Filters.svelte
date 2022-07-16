@@ -19,7 +19,6 @@
   </select>
 
   <br />
-  <br />
 
   <label for="status">Status</label>
   <select name="status" id="status" on:change={handleSelectChange}>

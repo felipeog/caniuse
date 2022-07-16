@@ -29,6 +29,18 @@ filtersStore.subscribe((store) => {
     });
   }
 
+  if (store.search?.length) {
+    const search = store.search;
+
+    filteredResults = filteredResults.filter((feature) => {
+      // @ts-ignore
+      const formattedSearch = search.toLowerCase().normalize("NFC");
+      const formattedTitle = feature.title.toLowerCase().normalize("NFC");
+
+      return formattedTitle.includes(formattedSearch);
+    });
+  }
+
   set(filteredResults);
 });
 
