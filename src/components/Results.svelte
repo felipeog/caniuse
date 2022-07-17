@@ -10,11 +10,11 @@
 		{@const isInLastRow = index >= lastRowFirstItemIndex}
 
 		<article class:no-border={isInLastRow}>
-			<p>
-				<a href={`/feature/${result.id}`} target="_blank" rel="noopener noreferrer"
-					>{result.title}</a
-				>
-			</p>
+			<h1>
+				<a href={`/feature/${result.id}`}>{result.title}</a>
+			</h1>
+
+			<p>{result.description}</p>
 		</article>
 	{/each}
 </section>
@@ -39,5 +39,13 @@
 
 	article.no-border {
 		border-bottom: none;
+	}
+
+	h1 {
+		font-size: 1.2rem;
+	}
+
+	p {
+		margin-top: 1rem;
 	}
 </style>
