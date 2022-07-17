@@ -2,6 +2,7 @@
 	import '../css/reset.css';
 	import '../css/variables.css';
 	import '../css/base.css';
+	import Header from '../components/Header.svelte';
 </script>
 
 <svelte:head>
@@ -13,4 +14,15 @@
 	/>
 </svelte:head>
 
-<slot />
+<div class="wrapper">
+	<Header />
+	<slot />
+</div>
+
+<style>
+	.wrapper {
+		max-width: 960px;
+		margin: var(--spacing_400) auto;
+		border: var(--layout_border);
+	}
+</style>
