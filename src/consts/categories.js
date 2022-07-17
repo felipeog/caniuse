@@ -1,19 +1,16 @@
-import data from "../../data.json";
+import { DATA } from './';
 
 // @ts-ignore
-const formattedCategories = Object.entries(data.cats).reduce(
-  (acc, [key, value]) => {
-    return {
-      ...acc,
-      [key]: value.join(","),
-    };
-  },
-  {}
-);
+const formattedCategories = Object.entries(DATA.cats).reduce((acc, [key, value]) => {
+	return {
+		...acc,
+		[key]: value.join(',')
+	};
+}, {});
 
 const CATEGORIES = {
-  All: "",
-  ...formattedCategories,
+	All: '',
+	...formattedCategories
 };
 
 export { CATEGORIES };

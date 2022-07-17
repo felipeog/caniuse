@@ -1,14 +1,14 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-  background-color: var(--background_color);
-  font-family: var(--font_family);
-  font-size: var(--font_size);
-  color: var(--text_color);
+	background-color: var(--background_color);
+	font-family: var(--font_family);
+	font-size: var(--font_size);
+	color: var(--text_color);
 }
 
 h1,
@@ -17,54 +17,54 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 h1 {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.4rem;
+	font-size: 1.4rem;
 }
 
 h3 {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 h4 {
-  font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 h5 {
-  font-size: 0.6rem;
+	font-size: 0.6rem;
 }
 
 h6 {
-  font-size: 0.4rem;
+	font-size: 0.4rem;
 }
 
 p {
-  color: var(--gray_400);
+	color: var(--gray_400);
 }
 
 input,
 button,
 select {
-  font-size: var(--font_size);
+	font-size: var(--font_size);
 }
 
 input,
 select {
-  border: var(--layout_border);
-  border-color: var(--gray_300);
-  background-color: var(--base_1);
-  color: var(--base_2);
-  padding: 0.4rem var(--spacing_100);
-  outline: none;
+	border: var(--layout_border);
+	border-color: var(--gray_300);
+	background-color: var(--base_1);
+	color: var(--base_2);
+	padding: 0.4rem var(--spacing_100);
+	outline: none;
 }
 
 input:focus,
 select:focus {
-  border-color: var(--gray_500);
+	border-color: var(--gray_500);
 }
