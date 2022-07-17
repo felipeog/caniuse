@@ -18,6 +18,7 @@ h4,
 h5,
 h6 {
 	font-weight: bold;
+	line-height: 1.4;
 }
 
 h1 {
@@ -46,6 +47,7 @@ h6 {
 
 p {
 	color: var(--gray_400);
+	line-height: 1.4;
 }
 
 input,
