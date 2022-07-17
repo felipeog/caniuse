@@ -1,9 +1,9 @@
 import { writable } from 'svelte/store';
 import { filtersStore } from './';
-import { DATA } from '../consts';
+import { FEATURES } from '../consts';
 
 // @ts-ignore
-const initialResults = Object.values(DATA.data);
+const initialResults = Object.values(FEATURES);
 
 const { subscribe, set, update } = writable(initialResults);
 
