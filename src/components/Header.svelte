@@ -1,5 +1,5 @@
 <header>
-	<h1>Caniuse</h1>
+	<h1><a href="/">Caniuse</a></h1>
 </header>
 
 <style>
