@@ -1,0 +1,42 @@
+:root {
+  --base_1: #fff;
+  --base_2: #000;
+
+  --gray_100: #eee;
+  --gray_200: #ccc;
+  --gray_300: #aaa;
+  --gray_400: #888;
+  --gray_500: #666;
+  --gray_600: #444;
+  --gray_700: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base_1: #222;
+    --base_2: #eee;
+
+    --gray_100: #333;
+    --gray_200: #555;
+    --gray_300: #777;
+    --gray_400: #999;
+    --gray_500: #bbbb;
+    --gray_600: #ccc;
+    --gray_700: #ddd;
+  }
+}
+
+:root {
+  --spacing_100: 0.6rem;
+  --spacing_200: 1rem;
+  --spacing_300: 1.4rem;
+  --spacing_400: 2rem;
+  --spacing_500: 2.8rem;
+
+  --background_color: var(--base_1);
+  --layout_border: 0.1rem solid var(--gray_100);
+
+  --text_color: var(--base_2);
+  --font_family: "Open Sans", sans-serif;
+  --font_size: 16px;
+}
