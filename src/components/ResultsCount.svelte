@@ -10,7 +10,7 @@
   $: label = count === 1 ? labels.singular : labels.plural;
 </script>
 
-<section>
+<section class:no-border={count === 0}>
   <p>{count} {label} found</p>
 </section>
 
@@ -18,5 +18,9 @@
   section {
     padding: var(--spacing_400);
     border-bottom: var(--layout_border);
+  }
+
+  section.no-border {
+    border-bottom: none;
   }
 </style>
