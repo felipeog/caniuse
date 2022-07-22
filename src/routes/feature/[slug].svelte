@@ -3,7 +3,6 @@
 	import { FEATURES } from '../../consts';
 
 	let slug = $page.params.slug;
-	// @ts-ignore
 	let feature = FEATURES[slug];
 </script>
 

@@ -8,15 +8,11 @@ const windowMock = {
 		search: ''
 	},
 	history: {
-		// @ts-ignore
 		pushState: (state, unused, url) => {
-			console.log({ state, unused, url });
+			console.assert({ state, unused, url });
 		}
 	}
 };
-
-// TODO: check if there is a better way to do this
-// @ts-ignore
 const filtersWindow = browser ? window : windowMock;
 
 const initialFilters = filtersWindow.location.search.length
@@ -32,7 +28,7 @@ subscribe((store) => {
 	filtersWindow.history.pushState({}, '', `${filtersWindow.location.origin}${search}`);
 });
 
-// @ts-ignore
+
 function setFilter({ name, value }) {
 	update((prevStore) => {
 		if (!value.length) {

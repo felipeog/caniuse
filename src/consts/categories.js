@@ -1,6 +1,5 @@
 import { DATA } from './';
 
-// @ts-ignore
 const formattedCategories = Object.entries(DATA.cats).reduce((acc, [key, value]) => {
 	return {
 		...acc,
