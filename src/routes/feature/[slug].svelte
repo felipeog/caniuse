@@ -10,6 +10,7 @@
 	<title>Caniuse | {feature.title}</title>
 </svelte:head>
 
+<!-- TODO: crate layout -->
 <h1>{feature.title}</h1>
 
 <pre>{JSON.stringify(feature, null, 2)}</pre>

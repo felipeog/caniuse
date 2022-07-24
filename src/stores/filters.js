@@ -13,6 +13,8 @@ const windowMock = {
 		}
 	}
 };
+
+// TODO: check if there is a better way to do this
 const filtersWindow = browser ? window : windowMock;
 
 const initialFilters = filtersWindow.location.search.length
@@ -27,7 +29,6 @@ subscribe((store) => {
 
 	filtersWindow.history.pushState({}, '', `${filtersWindow.location.origin}${search}`);
 });
-
 
 function setFilter({ name, value }) {
 	update((prevStore) => {
