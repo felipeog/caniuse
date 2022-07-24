@@ -1,5 +1,6 @@
 <script>
 	import { resultsStore } from '../stores/results';
+	import MarkdownParser from './MarkdownParser.svelte';
 	import ResultsBadge from './ResultsBadge.svelte';
 </script>
 
@@ -8,9 +9,9 @@
 		<div class="card-header">Results <ResultsBadge /></div>
 
 		<ul class="list-group list-group-flush list-group-numbered">
-			{#each $resultsStore as result, index}
-				<li class="list-group-item d-flex">
-					<div class="ms-2 text-break">
+			{#each $resultsStore as result (result.id)}
+				<li class="list-group-item d-flex pt-4">
+					<div class="ms-2 text-break w-100">
 						<p class="fw-semibold m-0">
 							<a href={`/feature/${result.id}`}>{result.title}</a>
 						</p>
@@ -21,7 +22,7 @@
 							{/each}
 						</ul>
 
-						<p class="mt-2 mb-0">{result.description}</p>
+						<MarkdownParser markdown={result.description} class="mt-2" />
 					</div>
 				</li>
 			{/each}
