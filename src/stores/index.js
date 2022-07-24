@@ -1,2 +1,2 @@
-export { filtersStore } from "./filters";
-export { resultsStore } from "./results";
+export { filtersStore } from './filters';
+export { resultsStore } from './results';
