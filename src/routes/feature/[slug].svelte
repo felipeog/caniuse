@@ -63,29 +63,41 @@
 		<article class="mt-4">
 			<h1 class="fs-3">Notes</h1>
 
-			<MarkdownParser markdown={feature.notes} />
+			{#if !feature.notes}
+				<p>No notes.</p>
+			{:else}
+				<MarkdownParser markdown={feature.notes} />
+			{/if}
 		</article>
 
 		<article class="mt-4">
 			<h1 class="fs-3">Links</h1>
 
-			<ol class="list-group list-group-numbered">
-				{#each feature.links as link}
-					<li class="list-group-item">
-						<a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
-					</li>
-				{/each}
-			</ol>
+			{#if !feature.links.length}
+				<p>No links.</p>
+			{:else}
+				<ol class="list-group list-group-numbered">
+					{#each feature.links as link}
+						<li class="list-group-item">
+							<a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
+						</li>
+					{/each}
+				</ol>
+			{/if}
 		</article>
 
 		<article class="mt-4">
 			<h1 class="fs-3">Keywords</h1>
 
-			<ul class="p-0 m-0">
-				{#each feature.keywords.split(',') as keyword}
-					<li class="badge text-bg-primary me-2">{keyword}</li>
-				{/each}
-			</ul>
+			{#if !feature.keywords}
+				<p>No keywords.</p>
+			{:else}
+				<ul class="p-0 m-0">
+					{#each feature.keywords.split(',') as keyword}
+						<li class="badge text-bg-primary me-2">{keyword}</li>
+					{/each}
+				</ul>
+			{/if}
 		</article>
 
 		<!-- <pre>{JSON.stringify(feature, null, 2)}</pre> -->
