@@ -1,12 +1,5 @@
-<header>
-	<h1><a href="/">Caniuse</a></h1>
+<header class="card">
+	<div class="card-body">
+		<h1 class="m-0"><a class="text-reset text-decoration-none" href="/">Caniuse</a></h1>
+	</div>
 </header>
-
-<style>
-	header {
-		padding: var(--spacing_400);
-		padding-top: 4rem;
-		padding-bottom: 4rem;
-		border-bottom: var(--layout_border);
-	}
-</style>

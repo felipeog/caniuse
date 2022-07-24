@@ -19,52 +19,38 @@
 	}
 </script>
 
-<section>
-	<article>
-		<label for="search">Search</label>
+<section class="mt-4">
+	<div class="card">
+		<div class="card-header">Filters</div>
 
-		<input bind:value type="text" name="search" id="search" />
-	</article>
+		<div class="card-body">
+			<div class="row">
+				<article class="col-lg">
+					<label class="form-label" for="search">Search</label>
 
-	<article>
-		<label for="category">Category</label>
+					<input class="form-control" bind:value type="text" name="search" id="search" />
+				</article>
 
-		<select name="category" id="category" on:change={handleSelectChange}>
-			{#each Object.entries(CATEGORIES) as [key, value]}
-				<option {value} selected={$filtersStore.category === value}>{key}</option>
-			{/each}
-		</select>
-	</article>
+				<article class="col-lg">
+					<label class="form-label" for="category">Category</label>
 
-	<article>
-		<label for="status">Status</label>
+					<select class="form-select" name="category" id="category" on:change={handleSelectChange}>
+						{#each Object.entries(CATEGORIES) as [key, value]}
+							<option {value} selected={$filtersStore.category === value}>{key}</option>
+						{/each}
+					</select>
+				</article>
 
-		<select name="status" id="status" on:change={handleSelectChange}>
-			{#each Object.entries(STATUSES) as [key, value]}
-				<option {value} selected={$filtersStore.status === value}>{key}</option>
-			{/each}
-		</select>
-	</article>
+				<article class="col-lg">
+					<label class="form-label" for="status">Status</label>
+
+					<select class="form-select" name="status" id="status" on:change={handleSelectChange}>
+						{#each Object.entries(STATUSES) as [key, value]}
+							<option {value} selected={$filtersStore.status === value}>{key}</option>
+						{/each}
+					</select>
+				</article>
+			</div>
+		</div>
+	</div>
 </section>
-
-<style>
-	section {
-		display: grid;
-		grid-template-columns: repeat(3, 33.333%);
-		border-bottom: var(--layout_border);
-	}
-
-	article {
-		display: flex;
-		flex-direction: column;
-		padding: var(--spacing_400);
-	}
-
-	article:not(:last-child) {
-		border-right: var(--layout_border);
-	}
-
-	label {
-		margin-bottom: 0.6rem;
-	}
-</style>

@@ -1,51 +1,30 @@
 <script>
 	import { resultsStore } from '../stores/results';
-
-	$: rowsCount = Math.ceil($resultsStore.length / 3);
-	$: lastRowFirstItemIndex = rowsCount * 3 - 3;
+	import ResultsBadge from './ResultsBadge.svelte';
 </script>
 
-<section>
-	{#each $resultsStore as result, index}
-		{@const isInLastRow = index >= lastRowFirstItemIndex}
+<section class="mt-4">
+	<div class="card">
+		<div class="card-header">Results <ResultsBadge /></div>
 
-		<article class:no-border={isInLastRow}>
-			<h1>
-				<a href={`/feature/${result.id}`}>{result.title}</a>
-			</h1>
+		<ul class="list-group list-group-flush list-group-numbered">
+			{#each $resultsStore as result, index}
+				<li class="list-group-item d-flex">
+					<div class="ms-2 text-break">
+						<p class="fw-semibold m-0">
+							<a href={`/feature/${result.id}`}>{result.title}</a>
+						</p>
 
-			<p>{result.description}</p>
-		</article>
-	{/each}
+						<ul class="p-0 m-0 mt-2 d-flex gap-2">
+							{#each result.categories as category}
+								<li class="badge text-bg-primary">{category}</li>
+							{/each}
+						</ul>
+
+						<p class="mt-2 mb-0">{result.description}</p>
+					</div>
+				</li>
+			{/each}
+		</ul>
+	</div>
 </section>
-
-<style>
-	section {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	article {
-		padding: var(--spacing_400);
-		border: var(--layout_border);
-		border-top: none;
-		border-left: none;
-		word-break: break-word;
-	}
-
-	article:nth-child(3n) {
-		border-right: none;
-	}
-
-	article.no-border {
-		border-bottom: none;
-	}
-
-	h1 {
-		font-size: 1.2rem;
-	}
-
-	p {
-		margin-top: 1rem;
-	}
-</style>

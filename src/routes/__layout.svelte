@@ -1,28 +1,17 @@
 <script>
-	import '../css/reset.css';
-	import '../css/variables.css';
-	import '../css/base.css';
 	import Header from '../components/Header.svelte';
 </script>
 
 <svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
 		rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+		crossorigin="anonymous"
 	/>
 </svelte:head>
 
-<div class="wrapper">
+<div class="container pt-4 pb-4">
 	<Header />
 	<slot />
 </div>
-
-<style>
-	.wrapper {
-		max-width: 960px;
-		margin: var(--spacing_400) auto;
-		border: var(--layout_border);
-	}
-</style>
